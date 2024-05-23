@@ -3,7 +3,6 @@ import os
 
 import requests
 from dotenv import load_dotenv
-from django.http import JsonResponse
 
 
 load_dotenv()

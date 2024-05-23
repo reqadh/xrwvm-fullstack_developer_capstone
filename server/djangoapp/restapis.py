@@ -3,6 +3,8 @@ import os
 
 import requests
 from dotenv import load_dotenv
+from django.http import JsonResponse
+
 
 load_dotenv()
 
@@ -28,14 +30,17 @@ def get_request(endpoint, **kwargs):
         # Call get method of requests library with URL and parameters
         response = requests.get(request_url)
         return response.json()
-    except:
-        # If any error occurs
-        print("Network exception occurred")
+    except Exception as e:
+        print(f"Error: {e}")
+
+
+
 
 
 # def analyze_review_sentiments(text):
 # request_url = sentiment_analyzer_url+"analyze/"+text
 # Add code for retrieving sentiments
+
 
 
 def analyze_review_sentiments(text):
@@ -58,8 +63,8 @@ def post_review(data_dict):
         response = requests.post(request_url, json=data_dict)
         print(response.json())
         return response.json()
-    except:
-        print("Network exception occurred")
+    except Exception as e:
+        print(f"Error: {e}")
 
 
 # Add code for posting review

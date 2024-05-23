@@ -1,5 +1,5 @@
 from .models import CarMake, CarModel
-
+from django.http import JsonResponse
 
 def initiate():
     car_make_data = [

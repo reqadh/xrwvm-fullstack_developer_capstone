@@ -32,14 +32,9 @@ def get_request(endpoint, **kwargs):
     except Exception as e:
         print(f"Error: {e}")
 
-
-
-
-
 # def analyze_review_sentiments(text):
 # request_url = sentiment_analyzer_url+"analyze/"+text
 # Add code for retrieving sentiments
-
 
 
 def analyze_review_sentiments(text):
@@ -52,9 +47,7 @@ def analyze_review_sentiments(text):
         print(f"Unexpected {err=}, {type(err)=}")
         print("Network exception occurred")
 
-
 # def post_review(data_dict):
-
 
 def post_review(data_dict):
     request_url = backend_url + "/insert_review"

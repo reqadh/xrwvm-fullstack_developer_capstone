@@ -57,7 +57,7 @@ def logout_request(request):
 # ...
 @csrf_exempt
 def registration(request):
-    context = {}
+    # context = {}
     data = json.loads(request.body)
     username = data["userName"]
     password = data["password"]
@@ -65,12 +65,12 @@ def registration(request):
     last_name = data["lastName"]
     email = data["email"]
     username_exist = False
-    email_exist = False
+    # email_exist = False
     try:
         # Check if user already exists
         User.objects.get(username=username)
         username_exist = True
-    except Exception as e:
+    except Exception :
         logger.debug("{} is new user".format(username))
     # If it is a new user
     if not username_exist:
@@ -164,7 +164,7 @@ def add_review(request):
         try:
             post_review(data)
             return JsonResponse({"status": 200})
-        except Exception as e:
+        except Exception :
             return JsonResponse({"status": 401, "message": "Error in posting review"})
     else:
         return JsonResponse({"status": 403, "message": "Unauthorized"})

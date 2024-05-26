@@ -25,6 +25,7 @@ const Dealer = () => {
   let post_review = root_url+`postreview/${id}`;
   
   const get_dealer = async ()=>{
+    console.log("hello there")
     const res = await fetch(dealer_url, {
       method: "GET"
     });
